@@ -1,5 +1,4 @@
 import type { Plugin } from "@kaelan/with-plugins";
-import { type BlockRenderer } from "@kaelan/render-blocks";
 
 // I don't know why, but re-exporting withPlugins from index.ts causes module parsing error, while exporting from here works:
 export { withPlugins } from "@kaelan/with-plugins";
@@ -15,17 +14,20 @@ export type ContentSourceConfig = {
   /** The base URL of the Content Source. */
   url: Url | { local: Url; staging: Url; production: Url };
   activeEnvironment: ContentSourceEnvironment;
+  /** The root URL path where you access your Content Source's project (usually this is the root of the adminPath and apiPath). */
+  projectPath: "/" | `/${string}`;
   /** The root URL path where you access your Content Source's admin UI. */
   adminPath: "/" | `/${string}`;
   /** The root URL path where your Content Source stores file assets (images, videos, etc.) */
   assetsPath: "/" | `/${string}`;
+  /** The root URL path where your Content Source stores API endpoints. */
+  apiPath: "/" | `/${string}`;
   /**
    * * Content Source Client ====================
    * The client is a function/class/ORM for interacting with this Content Source. We hold no opinions
    * about how it should work -- we just provide a standardized place to store it.
    */
   client?: Function;
-  blockRenderer?: BlockRenderer;
   /**
    * `meta` can be used to store anything you want about the Content Source.
    * It's particularly useful for plugins to store stuff.

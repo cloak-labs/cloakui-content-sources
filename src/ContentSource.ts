@@ -3,7 +3,7 @@ import type {
   ContentSourceConfig,
   Url,
   ContentSourceEnvironment,
-} from "./types";
+} from "./types.js";
 
 /**
  * Represents a single Content Source with helper methods for URL resolution,
@@ -103,6 +103,11 @@ export class ContentSource {
     return `${baseUrl}${this.config.adminPath}` as Url;
   }
 
+  getProjectUrl(environment?: ContentSourceEnvironment): Url {
+    const baseUrl = this.getUrl(environment);
+    return `${baseUrl}${this.config.projectPath}` as Url;
+  }
+
   /**
    * Gets the content URL by combining the base URL with the content path.
    * @param environment Optional environment override
@@ -111,6 +116,11 @@ export class ContentSource {
   getAssetsUrl(environment?: ContentSourceEnvironment): Url {
     const baseUrl = this.getUrl(environment);
     return `${baseUrl}${this.config.assetsPath}` as Url;
+  }
+
+  getApiUrl(environment?: ContentSourceEnvironment): Url {
+    const baseUrl = this.getUrl(environment);
+    return `${baseUrl}${this.config.apiPath}` as Url;
   }
 
   /**

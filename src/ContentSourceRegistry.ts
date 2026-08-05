@@ -1,5 +1,5 @@
-import { ContentSource } from "./ContentSource";
-import type { ContentSourceConfig } from "./types";
+import { ContentSource } from "./ContentSource.js";
+import type { ContentSourceConfig } from "./types.js";
 
 /**
  * Singleton registry that manages multiple Content sources and provides a centralized API for

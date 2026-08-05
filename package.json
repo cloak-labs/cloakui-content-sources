@@ -1,7 +1,8 @@
 {
-  "name": "cloakcms",
-  "version": "0.3.0",
-  "description": "A set of low-level standards and utilities for integrating any CMS with a decoupled frontend.",
+  "name": "@cloakui/content-sources",
+  "version": "0.4.0",
+  "description": "Register and look up content sources (CMS backends) with URLs, paths, and clients via a shared singleton registry.",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -14,32 +15,32 @@
   "scripts": {
     "dev": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "npm run build-ts",
-    "build-ts": "tsc-silent -p tsconfig.json --suppress @",
+    "build-ts": "tsc -p tsconfig.json",
     "clean": "rm -rf .turbo && rm -rf dist && npm run clean:modules",
     "clean:modules": "rm -rf node_modules",
     "zzz-postpublish": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloak-labs/cloakcms.git"
+    "url": "git+https://github.com/cloak-labs/cloakui-content-sources.git"
   },
   "keywords": [
+    "content-sources",
     "cms",
     "headless cms",
-    "cloak cms",
-    "cloak",
+    "cloakui",
     "headless",
-    "decoupled"
+    "decoupled",
+    "registry"
   ],
   "author": "Kaelan Smith",
   "license": "LGPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/cloak-labs/cloakcms/issues"
+    "url": "https://github.com/cloak-labs/cloakui-content-sources/issues"
   },
-  "homepage": "https://github.com/cloak-labs/cloakcms#readme",
+  "homepage": "https://github.com/cloak-labs/cloakui-content-sources#readme",
   "dependencies": {
-    "@kaelan/with-plugins": "^0.0.2",
-    "@kaelan/render-blocks": "^0.2.0"
+    "@kaelan/with-plugins": "^0.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.18.1",
