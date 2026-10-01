@@ -19,7 +19,9 @@
     "clean": "rm -rf .turbo && rm -rf dist",
     "clean:modules": "rm -rf node_modules",
     "zzz-postpublish": "git push && git push --tags",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check ."
   },
   "repository": {
     "type": "git",
@@ -44,9 +46,9 @@
     "@kaelan/with-plugins": "^0.0.2"
   },
   "devDependencies": {
-    "@types/node": "^18.18.1",
-    "tsc-watch": "^5.0.3",
-    "typescript": "^5.3.2"
+    "@types/node": "^18.19.130",
+    "typescript": "7.0.2",
+    "oxfmt": "0.71.0"
   },
   "publishConfig": {
     "access": "public"
