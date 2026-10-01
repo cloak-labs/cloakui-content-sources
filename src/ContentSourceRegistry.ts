@@ -57,7 +57,7 @@ export class ContentSourceRegistry {
    * @returns The built and registered Content Source
    */
   static async registerFromConfig(
-    config: ContentSourceConfig
+    config: ContentSourceConfig,
   ): Promise<ContentSource> {
     const source = new ContentSource(config);
     await source.applyPlugins();
@@ -71,10 +71,10 @@ export class ContentSourceRegistry {
    * @returns Array of built and registered ContentSource class instances
    */
   static async registerMultipleFromConfig(
-    configs: ContentSourceConfig[]
+    configs: ContentSourceConfig[],
   ): Promise<ContentSource[]> {
     const sources = await Promise.all(
-      configs.map((config) => ContentSourceRegistry.registerFromConfig(config))
+      configs.map((config) => ContentSourceRegistry.registerFromConfig(config)),
     );
     return sources;
   }
@@ -91,7 +91,7 @@ export class ContentSourceRegistry {
 
     if (!sourceName) {
       throw new Error(
-        "No default Content Source found. This likely means you haven't registered one yet."
+        "No default Content Source found. This likely means you haven't registered one yet.",
       );
     }
 
@@ -100,8 +100,8 @@ export class ContentSourceRegistry {
     if (!source) {
       throw new Error(
         `Content Source "${sourceName}" not found. Available sources: ${Array.from(
-          registry.sources.keys()
-        ).join(", ")}`
+          registry.sources.keys(),
+        ).join(", ")}`,
       );
     }
 

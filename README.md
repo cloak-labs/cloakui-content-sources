@@ -13,10 +13,7 @@ npm i @cloakui/content-sources
 ## Quick start
 
 ```ts
-import {
-  ContentSource,
-  ContentSourceRegistry,
-} from "@cloakui/content-sources";
+import { ContentSource, ContentSourceRegistry } from "@cloakui/content-sources";
 
 const wp = new ContentSource({
   name: "wp",
@@ -66,12 +63,12 @@ await ContentSourceRegistry.registerFromConfig({
 
 One backend instance. Holds config and helpers for:
 
-| Concern | Examples |
-| --- | --- |
-| URLs | `getActiveUrl()`, per-environment URL maps |
-| Paths | `projectPath`, `adminPath`, `apiPath`, `assetsPath` → joined URL helpers |
-| Client | Opaque `client()` — whatever ORM/SDK you use for interacting with that source |
-| Plugins | Transform config via `@kaelan/with-plugins` before registration |
+| Concern | Examples                                                                      |
+| ------- | ----------------------------------------------------------------------------- |
+| URLs    | `getActiveUrl()`, per-environment URL maps                                    |
+| Paths   | `projectPath`, `adminPath`, `apiPath`, `assetsPath` → joined URL helpers      |
+| Client  | Opaque `client()` — whatever ORM/SDK you use for interacting with that source |
+| Plugins | Transform config via `@kaelan/with-plugins` before registration               |
 
 ### `ContentSourceRegistry`
 

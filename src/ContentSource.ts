@@ -138,7 +138,7 @@ export class ContentSource {
   setActiveEnvironment(environment: ContentSourceEnvironment): ContentSource {
     if (typeof this.config.url === "string") {
       throw Error(
-        "Cannot set active environment for single URL instance. You must supply an object of URLs for each environment in your Content Source config."
+        "Cannot set active environment for single URL instance. You must supply an object of URLs for each environment in your Content Source config.",
       );
     }
 
